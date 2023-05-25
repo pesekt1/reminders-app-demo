@@ -2,7 +2,8 @@ import axios from "axios";
 import Reminder from "../models/reminder";
 
 class ReminderService {
-  http = axios.create({ baseURL: "https://jsonplaceholder.typicode.com/" });
+  //http = axios.create({ baseURL: "https://jsonplaceholder.typicode.com/" });
+  http = axios.create({ baseURL: "http://localhost:8000/" });
 
   async getReminders() {
     const response = await this.http.get<Reminder[]>("/todos");
@@ -14,7 +15,7 @@ class ReminderService {
     return (await response).data;
   }
 
-  async removeReminder(id: number) {
+  async removeReminder(id: string) {
     const response = await this.http.delete("/todos/" + id);
     return response.data;
   }

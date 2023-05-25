@@ -22,9 +22,9 @@ function App() {
     setReminders(reminders);
   };
 
-  const removeReminder = (id: number) => {
-    //ReminderService.removeReminder(id); //if there was a real backend
-    setReminders(reminders.filter((reminder) => reminder.id !== id));
+  const removeReminder = async (id: string) => {
+    setReminders(reminders.filter((reminder) => reminder._id !== id));
+    await ReminderService.removeReminder(id); //if there was a real backend
   };
 
   const addReminder = async (title: string) => {
