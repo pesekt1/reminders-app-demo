@@ -3,7 +3,7 @@ import Reminder from "../models/reminder";
 
 class ReminderService {
   //http = axios.create({ baseURL: "https://jsonplaceholder.typicode.com/" });
-  http = axios.create({ baseURL: "http://localhost:8000/" });
+  http = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
   async getReminders() {
     const response = await this.http.get<Reminder[]>("/todos");
