@@ -26,7 +26,7 @@ function NewReminder({ onAddReminder }: NewReminderProps): JSX.Element {
         className="form-control"
       />
       <button type="submit" className="btn btn-primary my-3 rounded-pill">
-        Add reminder
+        New reminder
       </button>
     </form>
   );
